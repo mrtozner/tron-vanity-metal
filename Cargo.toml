@@ -1,0 +1,33 @@
+[package]
+name = "tron-vanity-generator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+secp256k1 = { version = "0.28", features = ["rand", "global-context"] }
+tiny-keccak = { version = "2.0", features = ["keccak"] }
+sha2 = "0.10"
+bs58 = "0.5"
+rayon = "1.8"
+rand = "0.8"
+clap = { version = "4.4", features = ["derive"] }
+indicatif = "0.17"
+num_cpus = "1.16"
+hex = "0.4"
+sysinfo = "0.30"
+ctrlc = "3.4"
+crossbeam-channel = "0.5"
+num-bigint = "0.4"
+
+# Metal GPU acceleration (macOS only)
+metal = "0.29"
+objc = "0.2"
+block = "0.1"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+# Native CPU optimizations are automatically applied via .cargo/config.toml

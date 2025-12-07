@@ -422,6 +422,13 @@ fn run_gpu_native_search(
     if is_suffix_mode {
         // SUFFIX SEARCH
         let suffix = config.suffix.as_ref().ok_or("Suffix required for suffix mode")?;
+
+        if suffix.len() >= 6 {
+            println!("\nWarning: GPU-native search for long suffixes (6+ characters) is currently inefficient due to a Metal compiler issue.");
+            println!("Please run without the --gpu-native flag for a more stable search (this will use the CPU).");
+            return Ok(());
+        }
+
         let (target_modulus, target_remainder) = suffix_to_target(suffix);
 
         let searcher = GpuSuffixSearcher::new(context, num_threads, steps_per_thread)?;

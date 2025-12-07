@@ -169,6 +169,10 @@ Contributions welcome! Areas of interest:
 
 MIT License - see [LICENSE](LICENSE)
 
+## Changelog
+
+For a detailed list of changes, see the [CHANGELOG.md](CHANGELOG.md) file.
+
 ## Acknowledgments
 
 - secp256k1 curve implementation techniques from libsecp256k1

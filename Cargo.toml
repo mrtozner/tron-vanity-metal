@@ -1,7 +1,16 @@
 [package]
-name = "tron-vanity-generator"
-version = "0.1.0"
+name = "tron-vanity-metal"
+version = "1.0.0"
 edition = "2021"
+authors = ["mrtozner"]
+description = "A blazingly fast Metal GPU-accelerated TRON vanity address generator for Apple Silicon - 209 MH/s"
+license = "MIT"
+repository = "https://github.com/mrtozner/tron-vanity-metal"
+homepage = "https://github.com/mrtozner/tron-vanity-metal"
+documentation = "https://github.com/mrtozner/tron-vanity-metal#readme"
+readme = "README.md"
+keywords = ["tron", "vanity", "gpu", "metal", "apple-silicon", "crypto", "address-generator", "trx"]
+categories = ["cryptography", "command-line-utilities"]
 
 [dependencies]
 secp256k1 = { version = "0.28", features = ["rand", "global-context"] }
